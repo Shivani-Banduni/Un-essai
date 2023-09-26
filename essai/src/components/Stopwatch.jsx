@@ -9,22 +9,25 @@ const Stopwatch = () => {
     const[hour,sethour]=useState(0)
     const[min,setmin]=useState(0)
     const[sec,setsec]=useState(0)
+    const [mili,setMili] =useState(0)
 
 useEffect(()=>{
    let id= setInterval(() => {
-    if(active==true && sec<=59){
-        setsec(sec+1)
-    }else if(sec>59){
-        setmin(min+1);
+    if(active==true && mili<=59){
+        setMili(mili+1)
+    }else if(mili>59){
+        setsec(sec+1);
+        setMili(0)
+        // console.log(hour)
+    }
+    else if(sec>59){
+        setmin(min+1)
         setsec(0)
-        console.log(hour)
-    }
-    else if(min>59){
-        sethour(hour+1)
-        setmin(0)
 
+    }else if(min>59){
+        sethour(hour+1)
     }
-    }, 1000);
+    }, 100);
     return (()=>clearInterval(id))
 })
 function handlestart(){
@@ -44,7 +47,7 @@ function handlerestart(){
         <div className='main_div'>
             <div className='main_div1'>
             <b className='text'>Stopwatch</b><br></br>
-            <b className='text'>{hour}Hour :{min}min :{sec}sec</b>
+            <b className='text'>{hour}Hour :{min}min :{sec}sec : {mili}milli</b>
             </div>
             <div className='main'>
 

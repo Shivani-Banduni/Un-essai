@@ -14,7 +14,7 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul className="flex space-x-4">
-        <Link to="/stopwatch">Stopwatch</Link>
+        <Link to="/stopwatch" style={{color:'white'}}>Stopwatch</Link>
     {/* <Link to="/about">About</Link>
     <Link to="/Product">Product</Link> */}
         </ul>
