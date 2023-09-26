@@ -28,3 +28,13 @@
     text-align: center;
     margin-bottom: 40px;
 }
+.div{
+    /* border: 1px solid green; */
+    /* margin-right: 10px; */
+    width: 60px;
+}
+.text1{
+    display: flex;
+    font-size:xx-large;
+    justify-content: space-around;
+}

@@ -26,6 +26,7 @@ useEffect(()=>{
 
     }else if(min>59){
         sethour(hour+1)
+        setmin(0)
     }
     }, 100);
     return (()=>clearInterval(id))
@@ -42,12 +43,13 @@ function handlerestart(){
     sethour(0)
     setmin(0)
     setsec(0)
+    setMili(0)
 }
     return (
         <div className='main_div'>
             <div className='main_div1'>
             <b className='text'>Stopwatch</b><br></br>
-            <b className='text'>{hour}Hour :{min}min :{sec}sec : {mili}milli</b>
+            <b className='text1'><div className='div'>{hour} </div>Hour :  <div className='div'>{min} </div>  min :<div className='div'>{sec}  </div>  sec : <div className='div'>{mili} </div>milli</b>
             </div>
             <div className='main'>
 
